@@ -1,0 +1,196 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Cheat Sheet</title>
+</head>
+
+<body 
+
+Word Wide Web General
+
+    What are the most essential technologies that made the World Wide Web such a success?
+	    a system of globally unique identifiers for resources on the Web and elsewhere, the universal document identifier (UDI), later known as uniform resource locator (URL) and uniform resource identifier (URI);
+    the publishing language HyperText Markup Language (HTML);
+    the Hypertext Transfer Protocol (HTTP).[24]
+	
+    How are resources (html pages, images, etc) addressed in the web?
+	
+    URL Uniform Resource Locator
+    A URL is the address of some information on the web
+    e.g. http://web.stanford.edu/class/cs101
+    http: -- system/scheme to use
+    www.stanford.edu -- domain name of server computer
+    -recall "domain name" prev lecture
+    /class/cs101 -- "path", particular page on that server 
+
+http://web.stanford.edu/class/cs101
+
+A visit to a web page begins with a URL (Uniform Resource Locator) that points to that web page. Of course you've seen a million URLs over the years, but we'll look at the parts:
+
+The http at the start is the networking scheme to use, and "http" and its secure variant "https" are by far the most common. In the future, if there were some new networking scheme, the URL syntax could still support it by starting with a different word before the colon.
+
+After the // we have the web.stanford.edu which is the domain name of the computer on the internet that has this web page -- the web server. For the browser to request this web page, it will make a TCP/IP connection to that computer.
+
+After the domain name we have the /class/cs101 path which indicates essentially which directory and file we want specifically from that web server. 
+	
+    What are the general components of a url?
+	
+	
+    A scheme. The scheme identifies the protocol to be used to access the resource on the Internet. It can be HTTP (without SSL) or HTTPS (with SSL).
+    A host. The host name identifies the host that holds the resource. For example, www.example.com. A server provides services in the name of the host, but hosts and servers do not have a one-to-one mapping. Refer to Host names.
+
+    Host names can also be followed by a port number. Refer to Port numbers. Well-known port numbers for a service are normally omitted from the URL. Most servers use the well-known port numbers for HTTP and HTTPS , so most HTTP URLs omit the port number.
+    A path. The path identifies the specific resource in the host that the web client wants to access. For example, /software/htp/cics/index.html.
+    A query string. If a query string is used, it follows the path component, and provides a string of information that the resource can use for some purpose (for example, as parameters for a search or as data to be processed). The query string is usually a string of name and value pairs; for example, term=bluebird. Name and value pairs are separated from each other by an ampersand (&); for example, term=bluebird&source=browser-search.
+
+	
+	
+Web Server
+
+    What is a web server?
+	A Web server is a program that uses HTTP (Hypertext Transfer Protocol) to serve the files that form Web pages to users, in response to their requests, which are forwarded by their computers' HTTP clients. Dedicated computers and appliances may be referred to as Web servers as well.
+	
+	
+    What does a web server?
+	The process is an example of the client/server model. All computers that host Web sites must have Web server programs. Leading Web servers include Apache (the most widely-installed Web server), Microsoft's Internet Information Server (IIS) and nginx (pronounced engine X) from NGNIX. Other Web servers include Novell's NetWare server, Google Web Server (GWS) and IBM's family of Domino servers.
+
+Web servers often come as part of a larger package of Internet- and intranet-related programs for serving email, downloading requests for File Transfer Protocol (FTP) files, and building and publishing Web pages. Considerations in choosing a Web server include how well it works with the operating system and other servers, its ability to handle server-side programming, security characteristics, and  the particular publishing, search engine and site building tools that come with it.
+	
+    How can content be stored on a web server?
+	Web servers are able to map the path component of a Uniform Resource Locator (URL) into:
+
+    A local file system resource (for static requests)
+    An internal or external program name (for dynamic requests)
+
+For a static request the URL path specified by the client is relative to the web server's root directory.
+
+Consider the following URL as it would be requested by a client:
+
+http://www.example.com/path/file.html
+
+The client's user agent will translate it into a connection to www.example.com with the following HTTP 1.1 request:
+
+GET /path/file.html HTTP/1.1
+Host: www.example.com
+
+The web server on www.example.com will append the given path to the path of its root directory. On an Apache server, this is commonly /home/www (on Unix machines, usually /var/www). The result is the local file system resource:
+
+/home/www/path/file.html
+
+The web server then reads the file, if it exists, and sends a response to the client's web browser. The response will describe the content of the file and contain the file itself or an error message will return saying that the file does not exist or is unavailable. 
+
+
+    How is content in webpages described?
+	Web content is the textual, visual, or aural content that is encountered as part of the user experience on websites. It may include—among other things—text, images, sounds, videos, and animations.
+
+In Information Architecture for the World Wide Web, Lou Rosenfeld and Peter Morville write, "We define content broadly as 'the stuff in your Web site.' This may include documents, data, applications, e-services, images, audio and video files, personal Web pages, archived e-mail messages, and more. And we include future stuff as well as present stuff."[1] 
+
+Web Client
+
+    1 What is a web client?
+	
+Definition - What does Web Client mean?
+
+The Web client is a client-side component within the Java 2 Platform Enterprise Edition (J2EE), a distributed multi-tiered application model used for building and developing enterprise applications. Client-side components are typically computer applications running on a user's computer and connect to a server. These components perform client-side operations as they might need access to information available only on the client side, like user input, or because the server lacks the processing power necessary in such operations.
+
+J2EE is comprised of a client-tier, Web-tier, business-tier, and enterprise information system (EIS)-tier. Components that run on the client side of a machine are client-tier components.
+Techopedia explains Web Client
+
+A client-tier component may be an application or Web client. A Web client contains two parts: dynamic Web pages and the Web browser. Dynamic Web pages are produced by components that run in the Web tier, and a Web browser delivers Web pages received from the server.
+
+A Web client is also known as a thin client because it does not execute heavy-duty operations such as querying databases, performing complex business tasks, or connecting to legacy applications. Heavy-duty operations are performed by the J2EE server, which is secure, fast, and reliable.
+
+    2 What does a web client?
+	
+	When we talk about clients, though, we usually mean both (or either) the human user and the browser application.
+
+The browser is the piece of software (like Netscape or Mozilla) that knows how to communicate with the server. The browser’s other big job is interpreting the HTML code and rendering the web page for the user.
+
+So from now on, when we use the term client, we usually won’t care whether we’re talking about the human user or the browser app. In other words, the client is the browser app doing what the user asked it to do.
+    
+	Web Client and Web Browser is the same
+The web browser is an application program that displays a www document. It usually uses other internet services to access the document.
+Web server is a program or a computer that can provide services to other programs called clients.
+
+The main difference between a Web browser and a Web server is that Web browser requests for the document and services, and act as an interface between a client and a server which displays the web content. On the other hand, Web server accepts, approve, and response to the request made by a web browser for a web document.
+	
+	
+	
+	
+	
+Hello World
+
+    What is the html head element?
+	Definition and Usage
+
+The <head> element is a container for all the head elements.
+
+The <head> element can include a title for the document, scripts, styles, meta information, and more.
+
+The following elements can go inside the <head> element:
+
+    <title> (this element is required in an HTML document)
+    <style>
+    <base>
+    <link>
+    <meta>
+    <script>
+    <noscript>
+
+	
+	
+    What does <!DOCTYPE` html> mean?
+	
+	Definition and Usage
+
+The <!DOCTYPE> declaration must be the very first thing in your HTML document, before the <html> tag.
+
+The <!DOCTYPE> declaration is not an HTML tag; it is an instruction to the web browser about what version of HTML the page is written in.
+
+In HTML 4.01, the <!DOCTYPE> declaration refers to a DTD, because HTML 4.01 was based on SGML. The DTD specifies the rules for the markup language, so that the browsers render the content correctly.
+
+HTML5 is not based on SGML, and therefore does not require a reference to a DTD.
+
+Tip: Always add the <!DOCTYPE> declaration to your HTML documents, so that the browser knows what type of document to expect.
+	
+	
+    What are the two top most elements within the html element?
+	
+	
+    How to emphasize a text and how is it displayed in the browser?
+	
+	The <em> tag is a phrase tag. It renders as emphasized text.
+
+Tip: This tag is not deprecated, but it is possible to achieve richer effect with CSS.
+
+All phrase tags:
+Tag 	Description
+<em> 	Renders as emphasized text
+<strong> 	Defines important text
+<code> 	Defines a piece of computer code
+<samp> 	Defines sample output from a computer program
+<kbd> 	Defines keyboard input
+<var> 	Defines a variable
+	
+	
+    How to mark up important ext and how is it displayed in the browser?
+	
+	
+	Definition and Usage
+
+The <strong> tag is a phrase tag. It defines important text.
+
+Tip: This tag is not deprecated, but it is possible to achieve richer effect with CSS.
+
+All phrase tags:
+Tag 	Description
+<em> 	Renders as emphasized text
+<strong> 	Defines important text
+<code> 	Defines a piece of computer code
+<samp> 	Defines sample output from a computer program
+<kbd> 	Defines keyboard input
+<var> 	Defines a variable
+ 
+</body>
+
+</html> 
